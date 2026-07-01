@@ -1,5 +1,6 @@
 package com.healthpet
 
+import android.R
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -18,6 +19,7 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.unit.dp
 import com.healthpet.ui.theme.Pink40
 import com.healthpet.ui.theme.Purple40
+import com.healthpet.ui.theme.PurpleGrey40
 
 class MainActivity : ComponentActivity() {
 
@@ -31,7 +33,7 @@ class MainActivity : ComponentActivity() {
                         modifier = Modifier
                             .weight(1f)
                             .background(Purple40)
-                            .padding(8.dp, 8.dp)
+                            .padding(8.dp)
                     ) {
                         Text(
                             text = "Left Col",
@@ -43,7 +45,7 @@ class MainActivity : ComponentActivity() {
                         modifier = Modifier
                             .weight(1f)
                             .background(Color.Green)
-                            .padding(8.dp, 8.dp)
+                            .padding(8.dp)
                     ) {
                         Text(
                             text = "Right Col",
@@ -90,11 +92,17 @@ class MainActivity : ComponentActivity() {
                         )
                     }
                 }
-                Column(Modifier.weight(1f)) {
-                    Text("body")
+                Column(Modifier.weight(1f).fillMaxWidth().background(PurpleGrey40)) {
+                    Text(
+                        text = "body",
+                        color = Color.White
+                    )
                 }
-                Row(modifier = Modifier.fillMaxWidth().background(Purple40)) {
-                    Text("footer")
+                Row(modifier = Modifier.fillMaxWidth().background(Purple40).padding(8.dp)) {
+                    Text(
+                        text = "footer",
+                        color = Color.White
+                    )
                 }
             }
         }
