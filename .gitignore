@@ -1,0 +1,102 @@
+# =========================
+# Android / Kotlin
+# =========================
+
+# Gradle
+.gradle/
+build/
+**/build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Local configuration
+local.properties
+
+# Android Studio
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+
+# IntelliJ
+out/
+
+# Kotlin
+.kotlin/
+
+# KSP
+.ksp/
+
+# kapt
+generated/
+**/generated/
+
+# CMake
+.cxx/
+.externalNativeBuild/
+
+# NDK
+obj/
+
+# APK / AAB
+*.apk
+*.aab
+*.ap_
+*.aar
+
+# Dex
+*.dex
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Firebase
+google-services.json
+GoogleService-Info.plist
+
+# Signing keys
+*.jks
+*.keystore
+*.p12
+
+# Environment files
+.env
+.env.*
+
+# Profiling
+captures/
+
+# Crashlytics
+com_crashlytics_export_strings.xml
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# JetBrains caches
+.idea/caches/
+.idea/libraries/
+.idea/modules.xml
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/navEditor.xml
+.idea/assetWizardSettings.xml
+.idea/compiler.xml
+.idea/shelf/
+.idea/httpRequests/
+
+# Android Studio generated
+.idea/deploymentTargetSelector.xml
+.idea/deviceManager.xml
+.idea/gradle.xml
+
+# Mac/Linux
+.AppleDouble
+.LSOverride
