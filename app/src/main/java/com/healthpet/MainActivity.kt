@@ -13,7 +13,13 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Button
+import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.sp
@@ -69,20 +75,24 @@ class MainActivity : ComponentActivity() {
                             .padding(8.dp, 8.dp)
                     )
                 }
-                Col(
-                    "Body",
+
+                Column(
                     Modifier.weight(1f).fillMaxWidth().background(PurpleGrey40)
-                )
+                ) {
+                    Text(
+                        text = "Body",
+                        color = Color.White
+                    )
+
+                    Texto()
+                }
+
                 Row(modifier = Modifier.fillMaxWidth().background(Purple40).padding(8.dp)) {
                     Text(
                         text = "footer",
                         color = Color.White
                     )
-                    Button(onClick = {
-                        println("prueba desde btn")
-                    }) {
-                        Text("0")
-                    }
+
                     Counter()
                 }
             }
@@ -92,8 +102,37 @@ class MainActivity : ComponentActivity() {
     @Composable
     fun Counter()
     {
+        var count by remember {
+            mutableIntStateOf(0)
+        }
 
+        Button(onClick = {
+            count++
+        }) {
+            Text("Has hecho $count clics")
+
+        }
+
+        Text("Valor actual: $count")
     }
+
+    @Composable
+    fun Texto(){
+        var texto by remember {
+            mutableStateOf("")
+        }
+
+        TextField(
+            value = texto,
+            onValueChange = {
+                texto = it
+            },
+            label = { Text("Ingresa tu texto") },
+            modifier = Modifier.fillMaxWidth()
+
+        )
+    }
+
     @Composable
     fun Col(
         text: String = "ingresa tu texto",
