@@ -12,21 +12,21 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.healthpet.theme.White
+import com.healthpet.models.Pet
+import com.healthpet.models.PetType
 import com.healthpet.ui.components.PetCard
 
 @Composable
 fun HealthPetApp(){
     Column(modifier = Modifier.fillMaxSize().background(White).padding(16.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
-            PetCard(
-                1,
-                "\uD83D\uDE3A Nori Nori",
-                "Tabby",
-            )
-            PetCard(
-                2,
-                "\uD83D\uDE3A Bru",
-                "Negro",
-            )
+        val pets = listOf<Pet>(
+            Pet(1, "\uD83D\uDE3A Nori Nori", PetType.CAT, "Tabby"),
+            Pet(2, "\uD83D\uDC36 Milonga Longa", PetType.DOG, "Pit")
+        )
+
+        pets.forEach {
+            PetCard(it)
+        }
 
             Button(
                 modifier = Modifier.fillMaxWidth(),

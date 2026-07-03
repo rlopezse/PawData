@@ -10,12 +10,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.healthpet.models.Pet
-import com.healthpet.models.PetType
 
 @Composable
-fun PetCard(id: Long, name: String, breed: String){
+fun PetCard(pet: Pet){
     Card() {
-        val pet = Pet(id, name, PetType.CAT, breed)
         Box(modifier = Modifier.padding(16.dp).fillMaxWidth()) {
             Column {
                 Text(pet.name)
