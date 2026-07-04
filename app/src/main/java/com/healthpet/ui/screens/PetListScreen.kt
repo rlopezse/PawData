@@ -1,8 +1,8 @@
 package com.healthpet.ui.screens
 
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -14,6 +14,7 @@ import androidx.compose.ui.Modifier
 import com.healthpet.models.Pet
 import com.healthpet.models.PetType
 import com.healthpet.ui.components.PetCard
+import androidx.compose.foundation.lazy.items
 
 @Composable
 fun HealthPetScreen(modifier: Modifier, verticalArrangement: Arrangement.Vertical) {
@@ -25,14 +26,16 @@ fun HealthPetScreen(modifier: Modifier, verticalArrangement: Arrangement.Vertica
             )
         )
     }
-    Column(
-        modifier,
-        verticalArrangement
+
+    LazyColumn(
+        modifier = modifier,
+        verticalArrangement = verticalArrangement,
     ) {
-        pets.forEach {
-            PetCard(it)
+        items (pets) {
+            pet -> PetCard(pet)
         }
     }
+
     Button(
         modifier = Modifier.fillMaxWidth(),
         onClick = {
