@@ -15,17 +15,20 @@ import com.healthpet.models.Pet
 import com.healthpet.models.PetType
 import com.healthpet.ui.components.PetCard
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.text.input.rememberTextFieldState
+import androidx.compose.material3.TextField
 
 @Composable
 fun HealthPetScreen(modifier: Modifier, verticalArrangement: Arrangement.Vertical) {
     var pets by remember {
         mutableStateOf(
             listOf(
-                Pet(1, "\uD83D\uDE3A Nori Nori", PetType.CAT, "Tabby"),
-                Pet(2, "\uD83D\uDC36 Milonga", PetType.DOG, "Pit")
+                Pet(1, "\uD83D\uDE3A Nori Nori", PetType.CAT, "Tabby")
             )
         )
     }
+
+    val petnameState = rememberTextFieldState()
 
     LazyColumn(
         modifier = modifier,
@@ -36,10 +39,16 @@ fun HealthPetScreen(modifier: Modifier, verticalArrangement: Arrangement.Vertica
         }
     }
 
+    TextField(
+        state = petnameState,
+        modifier = Modifier.fillMaxWidth(),
+        placeholder = { Text("Cómo se llama tu mascota?") }
+    )
+
     Button(
         modifier = Modifier.fillMaxWidth(),
         onClick = {
-            pets = pets + Pet(3, "\uD83D\uDC36 Anto", PetType.DOG, "Pit")
+            pets = pets + Pet(3, ""+petnameState.text, PetType.DOG, "Pit")
         }
     ) {
         Text("+ Agregar mascota")
