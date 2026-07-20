@@ -9,6 +9,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.healthpet.services.http.callJson
 import com.healthpet.theme.LightColorScheme
 import com.healthpet.theme.bgColor
 import com.healthpet.ui.screens.HealthPetScreen
@@ -16,6 +17,7 @@ import com.healthpet.ui.screens.HealthPetScreen
 @Composable
 fun HealthPetApp(){
     MaterialTheme(colorScheme = LightColorScheme) {
+        callJson()
         Column(
             modifier = Modifier.fillMaxSize().background(bgColor).padding(16.dp)
         ) {
