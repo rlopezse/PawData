@@ -1,4 +1,4 @@
-package com.healthpet.ui.components
+package com.pawdata.ui.components
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Box
@@ -12,8 +12,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.healthpet.models.Pet
-import com.healthpet.theme.neutral50
+import com.pawdata.models.Pet
+import com.pawdata.theme.neutral50
 
 @Composable
 fun PetCard(pet: Pet){

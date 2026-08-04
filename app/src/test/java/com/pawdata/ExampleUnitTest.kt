@@ -1,4 +1,4 @@
-package com.healthpet
+package com.pawdata
 
 import org.junit.Test
 

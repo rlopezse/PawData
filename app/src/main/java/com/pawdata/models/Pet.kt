@@ -1,4 +1,4 @@
-package com.healthpet.models
+package com.pawdata.models
 
 data class Pet(
     val id: Long,
