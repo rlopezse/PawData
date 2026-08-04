@@ -1,4 +1,4 @@
-package com.healthpet.theme
+package com.pawdata.theme
 
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.ui.graphics.Color

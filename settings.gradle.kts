@@ -22,5 +22,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "HealthPet"
+rootProject.name = "PawData"
 include(":app")

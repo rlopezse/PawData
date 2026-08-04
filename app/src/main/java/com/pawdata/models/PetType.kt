@@ -1,4 +1,4 @@
-package com.healthpet.models
+package com.pawdata.models
 
 enum class PetType {
     CAT,

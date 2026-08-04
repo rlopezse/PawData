@@ -1,4 +1,4 @@
-package com.healthpet.ui.screens
+package com.pawdata.ui.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -11,15 +11,15 @@ import androidx.compose.runtime.setValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import com.healthpet.models.Pet
-import com.healthpet.models.PetType
-import com.healthpet.ui.components.PetCard
+import com.pawdata.models.Pet
+import com.pawdata.models.PetType
+import com.pawdata.ui.components.PetCard
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.text.input.rememberTextFieldState
 import androidx.compose.material3.TextField
 
 @Composable
-fun HealthPetScreen(modifier: Modifier, verticalArrangement: Arrangement.Vertical) {
+fun PawDataScreen(modifier: Modifier, verticalArrangement: Arrangement.Vertical) {
     var pets by remember {
         mutableStateOf(
             listOf(
