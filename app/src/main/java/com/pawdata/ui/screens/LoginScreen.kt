@@ -30,8 +30,16 @@ import com.pawdata.theme.neutral400
 import com.pawdata.theme.neutral600
 import com.pawdata.theme.primary400
 
+fun validarFormulario() {
+    println("validar forulario")
+}
+
 @Composable
 fun LoginScreen() {
+    var name by remember { mutableStateOf("") }
+    var mail by remember { mutableStateOf("") }
+    var password by remember { mutableStateOf("") }
+
     Column(
         Modifier.fillMaxSize()
     ) {
@@ -114,7 +122,7 @@ fun LoginScreen() {
             Button(
                 modifier = Modifier.fillMaxWidth(),
                 onClick = {
-                    println("hola desde botton")
+                    validarFormulario()
                 }) {
                 Text("Crear usuario")
             }
